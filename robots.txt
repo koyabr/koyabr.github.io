@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://koyabr.github.io/sitemap.xml
