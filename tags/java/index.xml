@@ -13,7 +13,7 @@
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://koyabr.github.io/post/java-zgc/</guid>
-      <description>ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了</description>
+      <description>&lt;p&gt;ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。&lt;/p&gt;</description>
     </item>
     
   </channel>
