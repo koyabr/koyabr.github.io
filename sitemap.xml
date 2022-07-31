@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://koyabr.github.io/tags/misc/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/post/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/tags/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/</loc>
+    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/tags/garbage-collection/</loc>
+    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://koyabr.github.io/tags/java/</loc>
     <lastmod>2021-03-21T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -9,43 +58,15 @@
   </url>
   
   <url>
-    <loc>https://koyabr.github.io/post/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://koyabr.github.io/tags/reading-list/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://koyabr.github.io/tags/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://koyabr.github.io/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://koyabr.github.io/post/java-zgc/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://koyabr.github.io/post/good-sites/</loc>
-    <lastmod>2021-03-21T00:00:00+00:00</lastmod>
+    <loc>https://koyabr.github.io/post/some-nice-websites-to-learn-programming-531079a8a5ad4faea56e9cd3520b49a6/</loc>
+    <lastmod>2020-09-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

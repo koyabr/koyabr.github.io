@@ -6,7 +6,25 @@
     <description>Recent content in Tags on You know nothing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>misc</title>
+      <link>https://koyabr.github.io/tags/misc/</link>
+      <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://koyabr.github.io/tags/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>garbage collection</title>
+      <link>https://koyabr.github.io/tags/garbage-collection/</link>
+      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://koyabr.github.io/tags/garbage-collection/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>java</title>
       <link>https://koyabr.github.io/tags/java/</link>
@@ -17,9 +35,9 @@
     </item>
     
     <item>
-      <title>reading-list</title>
+      <title>reading list</title>
       <link>https://koyabr.github.io/tags/reading-list/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://koyabr.github.io/tags/reading-list/</guid>
       <description></description>

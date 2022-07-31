@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>misc on You know nothing</title>
+    <link>https://koyabr.github.io/tags/misc/</link>
+    <description>Recent content in misc on You know nothing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 31 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My current workflow for writing blogs</title>
+      <link>https://koyabr.github.io/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/</link>
+      <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://koyabr.github.io/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/</guid>
+      <description>&lt;p&gt;目前我使用Notion存放笔记、撰写草稿，润色完毕后从Notion导出markdown和静态文件（图片等），使用Hugo生成静态站点，最后上传到Github pages。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

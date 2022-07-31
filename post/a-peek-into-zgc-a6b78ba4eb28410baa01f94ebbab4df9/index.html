@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>今天学习一下ZGC - You know nothing</title>
+  <title>A peek into ZGC - You know nothing</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -24,10 +24,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.81.0 with theme even" />
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
 
 
-<link rel="canonical" href="https://koyabr.github.io/post/java-zgc/" />
+<link rel="canonical" href="https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -36,23 +36,23 @@
 
 
 
-<link href="/sass/main.min.af7fd1da18d66c2b017df5b4cae508ef44cfcac3fb4c7c7a327fe4f4f9e28b08.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="今天学习一下ZGC" />
+<meta property="og:title" content="A peek into ZGC" />
 <meta property="og:description" content="ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://koyabr.github.io/post/java-zgc/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-03-21T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-03-21T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-03-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-21T00:00:00+00:00" />
 
-<meta itemprop="name" content="今天学习一下ZGC">
-<meta itemprop="description" content="ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。"><meta itemprop="datePublished" content="2021-03-21T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-03-21T00:00:00&#43;00:00" />
+<meta itemprop="name" content="A peek into ZGC">
+<meta itemprop="description" content="ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。"><meta itemprop="datePublished" content="2021-03-21T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-03-21T00:00:00+00:00" />
 <meta itemprop="wordCount" content="979">
-<meta itemprop="keywords" content="java," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="今天学习一下ZGC"/>
+<meta itemprop="keywords" content="java,garbage collection," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A peek into ZGC"/>
 <meta name="twitter:description" content="ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。"/>
 
 <!--[if lte IE 9]>
@@ -126,7 +126,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">今天学习一下ZGC</h1>
+      <h1 class="post-title">A peek into ZGC</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2021-03-21 </span>
@@ -140,13 +140,9 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#着色指针">着色指针</a></li>
-        <li><a href="#缺点">缺点</a></li>
-        <li><a href="#read-more">Read More</a></li>
-      </ul>
-    </li>
+    <li><a href="#着色指针">着色指针</a></li>
+    <li><a href="#缺点">缺点</a></li>
+    <li><a href="#read-more">Read More</a></li>
   </ul>
 </nav>
   </div>
@@ -154,7 +150,7 @@
     <div class="post-content">
       <p>ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。</p>
 <p>ZGC的目标是提供一个明确的停顿时间上限，保守说法是不超过10ms，实际上都是个位数。实现这个目标的主要手段是，将耗时的操作都尽可能并发处理，和应用代码一起执行。ZGC总共只有三个GC阶段需要stop the world，且都是和GC Roots相关的操作，所以不会随着heap增大而提高延迟。主要的标记和移动都是可并发操作的，得益于着色指针和读屏障。</p>
-<h2 id="着色指针">着色指针</h2>
+<h1 id="着色指针">着色指针</h1>
 <p>ZGC不支持32位应用，只使用64位指针，低42位（0～41 bit）用于真正的寻址（所以最高支持4T内存，内存总线48根没有用满，因为觉得现在没必要支持更大的内存），42～45 四个bit就是用来涂色，分别是M0、M1、Remapped、Finalized</p>
 <ol>
 <li>一开始，所有指针都是Remapped</li>
@@ -162,31 +158,27 @@
 <li>移动阶段，需要移动的对象标记为Remapped，并在Forwarding Table里记录(老地址 -&gt; 新地址)，方便后续修改；不需要移动的对象保留M0标记</li>
 <li>下一次GC标记阶段，存活的对象标记为M1，因为不能再标记为M0啦，免得和上次的混淆</li>
 </ol>
-<h2 id="缺点">缺点</h2>
+<h1 id="缺点">缺点</h1>
 <p>低延迟的代价是牺牲吞吐，相比G1，吞吐量最多降低15%，换来几十ms的停顿时间缩短。这样看，在一般的web应用里并不合适，更适合桌面客户端应用，比如Intellij Idea这种IDE。不过我查了一下，Intellij Idea刚刚将默认GC换成G1，距离采用ZGC应该还差了不少火候。对于不差钱的公司，追求极致低延迟的，G1更换ZGC没毛病。</p>
 <p>另外，ZGC不分代（因为分代实现有难度，先搞一版简单的，快步迭代嘛），如果内存对象分配速率很高，ZGC有内存不足的风险，实际应用中一般不能等默认的自适应算法决定GC时机，否则容易OOM，得通过参数让GC更早执行。</p>
-<h2 id="read-more">Read More</h2>
+<h1 id="read-more">Read More</h1>
 <ul>
-<li>
-<p>美团的文章，有实战经验分享</p>
+<li>美团的文章，有实战经验分享
 <ul>
 <li><a href="https://tech.meituan.com/2020/08/06/new-zgc-practice-in-meituan.html">新一代垃圾回收器ZGC的探索与实践 - 美团技术团队 (meituan.com)</a></li>
 </ul>
 </li>
-<li>
-<p>知乎上一个更通俗易懂的回答</p>
+<li>知乎上一个更通俗易懂的回答
 <ul>
-<li>ZGC 原理是什么，它为什么能做到低延时？ - 是Yes呀的回答 - 知乎 <a href="https://www.zhihu.com/question/287945354/answer/1580377994">https://www.zhihu.com/question/287945354/answer/1580377994</a></li>
+<li>ZGC 原理是什么，它为什么能做到低延时？ - 是Yes呀的回答 - 知乎 <a href="https://www.zhihu.com/question/287945354/answer/1580377994">https://www.zhihu.com/question/287945354/answer/1580377994</a></li>
 </ul>
 </li>
-<li>
-<p>ZGC也不是Silver Bullet</p>
+<li>ZGC也不是Silver Bullet
 <ul>
 <li><a href="https://www.zhihu.com/question/356585590">ZGC有什么缺点? - 知乎 (zhihu.com)</a></li>
 </ul>
 </li>
-<li>
-<p>有一定参考价值的benchmark，还包括了ShenandoahGC，以后找时间再研究下</p>
+<li>有一定参考价值的benchmark，还包括了ShenandoahGC，以后找时间再研究下
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/341010927">Java各种GC性能测试 - 知乎 (zhihu.com)</a></li>
 </ul>
@@ -198,11 +190,16 @@
 <footer class="post-footer">
       <div class="post-tags">
           <a href="/tags/java/">java</a>
+          <a href="/tags/garbage-collection/">garbage collection</a>
           </div>
       <nav class="post-nav">
-        
-        <a class="next" href="/post/good-sites/">
-            <span class="next-text nav-default">几个很不错的编程学习中文站点</span>
+        <a class="prev" href="/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">My current workflow for writing blogs</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/some-nice-websites-to-learn-programming-531079a8a5ad4faea56e9cd3520b49a6/">
+            <span class="next-text nav-default">Some nice websites to learn programming</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -240,7 +237,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>koyabr</span>
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>koyabr</span>
   </span>
 </div>
 
@@ -257,7 +254,7 @@
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

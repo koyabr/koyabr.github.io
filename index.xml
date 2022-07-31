@@ -6,22 +6,31 @@
     <description>Recent content on You know nothing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>今天学习一下ZGC</title>
-      <link>https://koyabr.github.io/post/java-zgc/</link>
+      <title>My current workflow for writing blogs</title>
+      <link>https://koyabr.github.io/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/</link>
+      <pubDate>Sun, 31 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://koyabr.github.io/post/my-current-workflow-for-writing-blogs-58c08ad5ddd6450e9020f113ae088b53/</guid>
+      <description>&lt;p&gt;目前我使用Notion存放笔记、撰写草稿，润色完毕后从Notion导出markdown和静态文件（图片等），使用Hugo生成静态站点，最后上传到Github pages。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>A peek into ZGC</title>
+      <link>https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://koyabr.github.io/post/java-zgc/</guid>
+      <guid>https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/</guid>
       <description>&lt;p&gt;ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>几个很不错的编程学习中文站点</title>
-      <link>https://koyabr.github.io/post/good-sites/</link>
-      <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
+      <title>Some nice websites to learn programming</title>
+      <link>https://koyabr.github.io/post/some-nice-websites-to-learn-programming-531079a8a5ad4faea56e9cd3520b49a6/</link>
+      <pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://koyabr.github.io/post/good-sites/</guid>
+      <guid>https://koyabr.github.io/post/some-nice-websites-to-learn-programming-531079a8a5ad4faea56e9cd3520b49a6/</guid>
       <description>&lt;p&gt;虽然有CSDN为代表的一票拷贝狂魔，让网络上的中文编程资料质量令人一言难尽，但我们的眼睛总是可以发现一些美好的，比如这几个很不错的中文站点。&lt;/p&gt;</description>
     </item>
     
