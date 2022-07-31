@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://koyabr.github.io/tags/hackintosh/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://koyabr.github.io/post/hackintosh-in-2022-f653d9474395410c9d71e4e5a0416525/</loc>
+    <lastmod>2022-07-31T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://koyabr.github.io/tags/misc/</loc>
     <lastmod>2022-07-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>

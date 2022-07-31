@@ -140,13 +140,9 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#static-site-generators">Static site generators</a></li>
-        <li><a href="#markdown-editors">Markdown editors</a></li>
-        <li><a href="#data-syncing">Data syncing</a></li>
-      </ul>
-    </li>
+    <li><a href="#static-site-generators">Static site generators</a></li>
+    <li><a href="#markdown-editors">Markdown editors</a></li>
+    <li><a href="#data-syncing">Data syncing</a></li>
   </ul>
 </nav>
   </div>
@@ -155,14 +151,14 @@
       <p>目前我使用Notion存放笔记、撰写草稿，润色完毕后从Notion导出markdown和静态文件（图片等），使用Hugo生成静态站点，最后上传到Github pages。</p>
 <p>之前的做法是在本地编辑Markdown，用网盘做文件同步。因为本人多少有点强迫症，喜欢调整笔记的目录结构、拆分和合并笔记，导致静态资源文件的存放位置也需要频繁变化，每次打开数个文件管理器窗口拖来拖去时都感觉自己是个大傻子。因此当我获悉Notion放开了免费用户的区块数量限制，就立刻决定用Notion管理所有笔记和草稿了。</p>
 <p>下面随意记录一些我折腾过的轮子。</p>
-<h2 id="static-site-generators">Static site generators</h2>
+<h1 id="static-site-generators">Static site generators</h1>
 <p>一开始当然是Github官方使用的JekyII，不得不说用起来友好度基本为零，需要了解太多语法配置，可选的主题也很少。</p>
 <p>后来兴起了Hexo，还是js生态的衍生品，但经过广大艺术家网友的奋力modding，主题丰富度和配置简易度都大大提升，已经能很好地满足日常写作需求。这个阶段，我的选择困难症在于寻找一款顺手的本地markdown编辑器（见下文）。</p>
 <p>再后来，随着Golang邪教（不是）席卷全球，用Golang重写所有轮子的运动愈演愈烈，Hexo也难逃被模仿的命运，于是我们迎来了Hugo。已经习惯Hexo的人可以很顺利地迁移到Hugo，喜欢的Hexo主题也基本能在Hugo的主题库里找到复刻品。可能专业做前端的人会选择留守Hexo，毕竟二次开发更方便，但对于我们这种早已放弃全栈、安心在后端拧螺丝的咸鱼们，Hugo用起来会更加省心，断舍离强迫症患者们也不再会对着NPM拖到本地的几万个文件发出哀嚎。</p>
 <p>截止2022年7月，在个人博客的静态站点生成器这一领域，还没有看到Hexo和Hugo的有力竞争者。另一个赛道是技术文档的静态站点，此处有Gitbook、VuePress、Docsify等优秀产品，还有Slate这种专攻API文档的军刀，各位可以根据需求选择。</p>
-<h2 id="markdown-editors">Markdown editors</h2>
+<h1 id="markdown-editors">Markdown editors</h1>
 <p>先是付费支持了国产的MarkWeb，后来发现了免费（一直在beta阶段）的Typora，用到它终于转为收费的正式产品后，又尝试了开源作品MarkText，基本上保留了Typora大部分核心功能，虽然不是原汁原味的复刻体验，但在白嫖的前提下有什么不能忍受呢（doge）。对于大多数人的日常需求，MarkText是可以满足的，推荐使用。</p>
-<h2 id="data-syncing">Data syncing</h2>
+<h1 id="data-syncing">Data syncing</h1>
 <p>最终站点已经通过Github实现了云端托管，但本懒鬼的成品文章数量和草稿笔记比起来，完全是九牛一毛，我又不好意思将一堆素材倾泻到Github的服务器上，更不想污染git commit的日志，因此选择了OneDrive等同步盘来保存Markdown和静态资源文件。其实只要你不是我的强迫症（见本文开头）病友，这套解决方案完全没问题。</p>
     </div>
 
@@ -172,7 +168,11 @@
           <a href="/tags/misc/">misc</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/hackintosh-in-2022-f653d9474395410c9d71e4e5a0416525/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hackintosh in 2022</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/">
             <span class="next-text nav-default">A peek into ZGC</span>
             <span class="next-text nav-mobile">Next</span>
