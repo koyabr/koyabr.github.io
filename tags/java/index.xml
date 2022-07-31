@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://koyabr.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A peek into ZGC</title>
-      <link>https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/</link>
+      <link>https://koyabr.github.io/post/a-peek-into-zgc/</link>
       <pubDate>Sun, 21 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://koyabr.github.io/post/a-peek-into-zgc-a6b78ba4eb28410baa01f94ebbab4df9/</guid>
+      <guid>https://koyabr.github.io/post/a-peek-into-zgc/</guid>
       <description>&lt;p&gt;ZGC在Java 11亮相，在Java 15转正（production ready），好奇它和G1有何不同，今天读了一些知乎问答和技术文章，简单了解一下ZGC的原理。&lt;/p&gt;</description>
     </item>
     
